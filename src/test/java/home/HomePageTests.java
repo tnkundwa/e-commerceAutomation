@@ -1,8 +1,6 @@
 package home;
 
 import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 

@@ -28,7 +28,6 @@ public class CheckoutPage {
     private By pageTitle = By.tagName("h1");
     private By orderReceived = By.xpath(".//p[contains(text(), 'Thank you')]");
     private By theWholeDiv = By.className("woocommerce-billing-fields__field-wrapper");
-    // private By commonInput = By.cssSelector("span.woocommerce-input-wrapper > input");
 
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
@@ -71,11 +70,6 @@ public class CheckoutPage {
         WebElement hold = driver.findElement(orderComments);
         hold.sendKeys(comment);
     }
-    // public void waitForEverything(String name){
-    //     driver.findElement(firstName).findElement(By.cssSelector("span.woocommerce-input-wrapper > input"));
-    //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    //     wait.until(ExpectedConditions.attributeContains(firstName, "value", name));
-    // }
     public void clickPlaceOrder(){
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait1.until(ExpectedConditions.elementToBeClickable(driver.findElement(placeOrderBtn)));
