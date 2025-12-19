@@ -4,7 +4,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-// import java.util.stream.Collectors;
 
 public class HomePage {
     public WebDriver driver;

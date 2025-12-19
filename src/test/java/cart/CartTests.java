@@ -1,9 +1,7 @@
 package cart;
 
 import static org.junit.Assert.assertEquals;
-
-// import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -12,38 +10,26 @@ import pages.*;
 
 public class CartTests extends BaseTests{
 
-    // @Test
-    // public void testCart(){
-    //     MensPage men = homePage.clickMenLink();
-    //     int numberofClicks = 3;
-    //     men.clickAddToCart(3, numberofClicks);
-    //     String hold = men.itemName();
-    //     window().goBack();
-    //     CartPage cart = homePage.clickCart();
-    //     int use = cart.getProductName(hold);
-    //     assertEquals("please work!", numberofClicks, use);
-    // }
-
-    // @Test
-    // public void testDelet(){
-    //     MensPage men = homePage.clickMenLink();
-    //     men.clickAddToCart(3, 1);
-    //     window().goBack();
-    //     CartPage cart = homePage.clickCart();
-    //     String hold = cart.removeProduct(1);
-    //     assertTrue("Wrong text!", cart.removeText().contains(hold));
-    // }
+    @Test
+    public void testDelet(){
+        MensPage men = homePage.clickMenLink();
+        men.clickAddToCart(3, 1);
+        window().goBack();
+        CartPage cart = homePage.clickCart();
+        String hold = cart.removeProduct(1);
+        assertTrue("Wrong text!", cart.removeText().contains(hold));
+    }
     
-    // @Test
-    // public void testUndo(){
-    //     MensPage men = homePage.clickMenLink();
-    //     men.clickAddToCart(3, 1);
-    //     window().goBack();
-    //     CartPage cart = homePage.clickCart();
-    //     String hold = cart.removeProduct(1);
-    //     cart.clickUndo();
-    //     assertTrue("Not working!", cart.isElementBack(hold));
-    // }
+    @Test
+    public void testUndo(){
+        MensPage men = homePage.clickMenLink();
+        men.clickAddToCart(3, 1);
+        window().goBack();
+        CartPage cart = homePage.clickCart();
+        String hold = cart.removeProduct(1);
+        cart.clickUndo();
+        assertTrue("Not working!", cart.isElementBack(hold));
+    }
 
     @Test
     public void workQuantity(){
